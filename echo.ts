@@ -14,7 +14,8 @@ export default class EchoTool extends ModaiTool {
     },
   };
 
-  protected async _execute(args: { message: string }): Promise<any> {
+  protected async _execute(args: Record<string, any>): Promise<any> {
+    this.validateArgs(args, this.metadata.parameters.required);
     return { echoedMessage: args.message };
   }
 }
