@@ -1,6 +1,6 @@
 import { ModaiTool } from "modai-protocol/dist/tools/base.js";
 import type { ToolMetadata } from "modai-protocol/dist/tools/base.js";
-export class EchoTool extends ModaiTool { // naming convention is [ToolName]Tool
+export default class EchoTool extends ModaiTool {
   metadata: ToolMetadata = {
     name: "echo",
     description: "A simple echo tool.",
