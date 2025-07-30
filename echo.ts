@@ -1,6 +1,6 @@
 import { ModaiTool } from "modai-protocol/dist/tools/base.js";
 import type { ToolMetadata } from "modai-protocol/dist/tools/base.js";
-export class echoTool extends ModaiTool {
+export class EchoTool extends ModaiTool {
   metadata: ToolMetadata = {
     name: "echo",
     description: "A simple echo tool.",
@@ -14,8 +14,7 @@ export class echoTool extends ModaiTool {
     },
   };
 
-  protected async _execute(args: Record<string, any>): Promise<any> {
-    this.validateArgs(args, this.metadata.parameters.required);
+  protected async _execute(args: { message: string }): Promise<any> {
     return { echoedMessage: args.message };
   }
 }
